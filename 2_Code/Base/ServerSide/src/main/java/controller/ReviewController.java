@@ -13,11 +13,11 @@ public class ReviewController {
 
     @GetMapping("/reviews")
     public ResponseEntity<String> searchReviewsByQuery(@RequestParam String query) {
-        return ResponseEntity.ok("Hello World : " + query);
+        return ResponseEntity.ok("Hello World : " + query) ;
     }
 
     @PutMapping("/reviews/{id}")
     public ResponseEntity<String> editingReview(@RequestBody String body, @PathVariable long id) {
-        return ResponseEntity.ok("Hello World : Put");
+        return ResponseEntity.ok("Hello World : Put\nID = " + id + "\nBody = " + body);
     }
 }
