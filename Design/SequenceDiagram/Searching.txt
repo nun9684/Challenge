@@ -7,17 +7,12 @@ participant DatabaseManager
 participant ServerSide
 database dbReviewList
 
-User -> View : input charactor key
+User -> View : input text and Click on Search icon
 activate View
-	View -> Control : Call function to update input food keyword
-    
+    View ->Control: Check input text
     activate Control
-    alt If it is received another input charactor from user
-    	Control -> Control : Set count down time to 1 second 
-    else If no input for 1 second
-       	Control -> Control : Check text input is review ID or food key word
+    	Control -> Control : Check text input is review ID or food key word
     	Control -> Control : Call search function 
-    
       activate DatabaseManager
        alt food key word
         Control -> DatabaseManager : Call request function with food keyword
